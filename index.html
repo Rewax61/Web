@@ -5,14 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-index.css">
-    <title>Document</title>
+    <title>Connexion</title>
 </head>
 <body>
-    <h1>Bienvenu</h1>
-    <form action="code.php" method="post">
-        <input type="text" value="" placeholder="Idetifiant" name="id"><br>
-        <input type="password" value="" placeholder="Mot de passe" name="password"><br>
-        <input type="submit" value="Valider">
-    </form>
+    <div id="formulaire">
+        <h1>Connexion</h1>
+        <form action="code.php" method="post" class="connexion">
+            <input type="text" value="" placeholder="Idetifiant" autocomplete='off' name="id" class="inpt"><br><br>
+            <input type="password" value="" placeholder="Mot de passe" autocomplete='off' name="password" class="inpt"><br><br>
+            <input type="submit" value="Valider" id="btn">
+        </form>
+    </div>
 </body>
 </html>
