@@ -4,5 +4,4 @@ function defineUser(prenom, nom) {
         prenom: prenom
     }
     localStorage.setItem('user', JSON.stringify(user));
-
 }
