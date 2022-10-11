@@ -1,3 +1,14 @@
+<?php
+$token = $_COOKIE['token'];
+if ($token != 'nqT0jUvr6RAQImzd5Vm607TB8HN9ob2RSojK') {
+    header('Location: /');
+    exit();
+}else {
+    setcookie('token');
+    unset($_COOKIE['token']);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
