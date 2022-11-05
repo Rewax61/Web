@@ -7,6 +7,7 @@ if ($token != 'nqT0jUvr6RAQImzd5Vm607TB8HN9ob2RSojK') {
     setcookie('token');
     unset($_COOKIE['token']);
 }
+$user = $_COOKIE['user'];
 ?>
 
 <!DOCTYPE html>
@@ -16,11 +17,10 @@ if ($token != 'nqT0jUvr6RAQImzd5Vm607TB8HN9ob2RSojK') {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style-accueil.css">
-    <script src="js/script-accueil.js" defer></script>
     <title>Accueil</title>
 </head>
 <body>
-    <h1 id="titre">Bienvenu</h1>
+    <h1 id="titre">Bienvenu <?php echo $user; ?></h1>
     
 </body>
 </html>
