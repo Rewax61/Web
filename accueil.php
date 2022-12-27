@@ -1,15 +1,12 @@
 <?php
-$token = $_COOKIE['token'];
-if ($token != 'nqT0jUvr6RAQImzd5Vm607TB8HN9ob2RSojK') {
+session_start();
+if (! isset($_SESSION['token']) || $_SESSION['token'] != 'nqT0jUvr6RAQImzd5Vm607TB8HN9ob2RSojK') {
     header('Location: /');
     exit();
 }else {
-    setcookie('token');
-    unset($_COOKIE['token']);
+    $user = $_SESSION['user'];
 }
-$user = $_COOKIE['user'];
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -21,6 +18,13 @@ $user = $_COOKIE['user'];
 </head>
 <body>
     <h1 id="titre">Bienvenu <?php echo $user; ?></h1>
+    <?php if ($user == 'root'):?>
+        <form action="newUser.php" method="post">
+            <input type="text" value="" name="loginUser" placeholder="Indentifiant de l'utilisateur" autocomplete="off">
+            <input type="password" value="" name="passwordUser" placeholder="Mot de passe de l'utilisateur" autocomplete="off">
+            <input type="submit" value="Créer un nouvel utilisateur">
+        </form>
+    <?php endif;?>
     
 </body>
 </html>
